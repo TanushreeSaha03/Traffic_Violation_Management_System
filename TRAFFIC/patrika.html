@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="full-page">
+        <img src="logo.jpeg" class="logo">
+        <div class="content">
+            <h1>Welcome</h1>
+            <h3>to</h3>
+            <h4>Traffic Violation Management System</h4>
+            <p>Safe Drive,Save Life</p>
+        </div>
+        <div class="navbar">
+            <nav>
+                <ul id='MenuItems'>
+                    <li><a href='#'>Home</a></li>
+                    <li><a href='#'>About Us</a></li>
+                    <li><a href='#'>Services</a></li>
+                    <li><a href='#'>Contact</a></li>
+                    <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                          <li><a href="admin/index.html" target="_blank">ADMIN</a></li>
+                          <li><a href="police/index.html" target="_blank">POLICE</a></li>
+                          <li><a href="car owner/index.html" target="_blank">CAR OWNER</a></li>
+                          <li><a href="driver/index.html" target="_blank">DRIVER</a></li>
+                        </ul>
+                    </li>
+            </nav>
+        </div>
+        <div id='login-form'class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                    <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                </div>
+
+              
+
+                
+            <form id='login' class='input-group-login'  action =login.php method="post">
+                <input type='text'  class='input-field'placeholder='Email Id' required >
+		        <input type='password'  class='input-field'placeholder='Enter Password' required>
+		        <input type='checkbox'class='check-box'><span>Remember Password</span>
+		        <button type='submit'class='submit-btn'>Log in</button>
+		    </form>
+
+ 
+
+
+		    <form id='register' class='input-group-register' action ='reg.php' method ='post'>
+                
+		     <input type='text' name="firstname" class='input-field'placeholder='First Name' required>
+		     <input type='text' name="lastname" class='input-field'placeholder='Last Name ' required>
+		     <input type='email' name='email' class='input-field'placeholder='Email Id' required>
+		     <input type='password' name="password" class='input-field'placeholder='Enter Password' required>
+		     <input type='password' name="confirmpassword" class='input-field'placeholder='Confirm Password'  required>
+		     <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
+                    <button type='submit'class='submit-btn'>Register</button>
+	        
+        </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var x=document.getElementById('login');
+		var y=document.getElementById('register');
+		var z=document.getElementById('btn');
+		function register()
+		{
+			x.style.left='-400px';
+			y.style.left='50px';
+			z.style.left='110px';
+		}
+		function login()
+		{
+			x.style.left='50px';
+			y.style.left='450px';
+			z.style.left='0px';
+		}
+	</script>
+	<script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
